@@ -5,6 +5,7 @@
   margin: 0 auto;
   /* border: 1px solid grey; */
   max-width: 350px;
+  font-family: "Space Mono", monospace;
 }
 
 #inputField {
@@ -35,4 +36,8 @@ img {
   color: white;
   font-family: "Space Mono", monospace;
   font-size: 15px;
+}
+
+li {
+  text-transform: capitalize;
 }

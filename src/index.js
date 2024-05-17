@@ -11,15 +11,26 @@ const appSettings = {
 
 const app = initializeApp(appSettings);
 const database = getDatabase(app);
-const shoppingList = ref(database, "shoppingList");
+const shoppingListDB = ref(database, "shoppingList");
 
 const inputElement = document.getElementById("inputField");
 const addBtn = document.getElementById("addBtn");
+const shoppingList = document.getElementById("shopping-list");
 
 addBtn.addEventListener("click", addToCart);
 
 function addToCart() {
   let inputValue = inputElement.value;
-  push(shoppingList, inputValue);
-  console.log(inputValue);
+  push(shoppingListDB, inputValue);
+  clearInput();
+  shoppingListItems(inputValue);
+}
+
+function clearInput() {
+  inputElement.value = " ";
+}
+
+function shoppingListItems(item) {
+  shoppingList.innerHTML += `
+  <li>${item}</li>`;
 }
