@@ -38,6 +38,20 @@ img {
   font-size: 15px;
 }
 
+ul {
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
 li {
   text-transform: capitalize;
+  list-style: none;
+  background-color: #fffdf8;
+  border: 1px solid black;
+  border-radius: 10px;
+  flex-grow: 1;
+  text-align: center;
+  padding: 10px;
 }

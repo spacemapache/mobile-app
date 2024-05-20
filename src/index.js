@@ -3,6 +3,7 @@ import {
   getDatabase,
   ref,
   push,
+  onValue,
 } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 
 const appSettings = {
@@ -23,7 +24,19 @@ function addToCart() {
   let inputValue = inputElement.value;
   push(shoppingListDB, inputValue);
   clearInput();
-  shoppingListItems(inputValue);
+}
+
+onValue(shoppingListDB, function (snapshot) {
+  let itemsArray = Object.values(snapshot.val());
+  clearShoppingList();
+
+  for (let i = 0; i < itemsArray.length; i++) {
+    shoppingListItems(itemsArray[i]);
+  }
+});
+
+function clearShoppingList() {
+  shoppingListItems.innerHTML = "";
 }
 
 function clearInput() {
