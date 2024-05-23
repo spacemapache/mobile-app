@@ -32,10 +32,15 @@ img {
   border-radius: 5px;
   border: none;
   text-align: center;
-  background-color: #b15164;
+  background-color: #ce6278;
   color: white;
   font-family: "Space Mono", monospace;
   font-size: 15px;
+}
+
+#addBtn:hover {
+  background-color: #b15164;
+  cursor: pointer;
 }
 
 ul {
@@ -49,9 +54,15 @@ li {
   text-transform: capitalize;
   list-style: none;
   background-color: #fffdf8;
-  border: 1px solid black;
+  border: none;
   border-radius: 10px;
   flex-grow: 1;
   text-align: center;
   padding: 10px;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+li:hover {
+  background-color: #ffecc7;
+  cursor: pointer;
 }
